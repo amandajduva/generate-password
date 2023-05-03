@@ -4,24 +4,29 @@ const lowercaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "
 const uppercaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const specialCharacter = ["!", "@", "$", "%", "&", "*", "_", "+", "=", "?", "~"]; 
 
+// includes all prompts and code to store information necessary to generate password
 function generatePassword() {
-  let characterOptions = []
+  let characterOptions = [];
+  let result = "";
 
-  let length = window.prompt("Enter the amount of characters you would like in your password: must be at least 8 and no more than 128.");
+  let length = parseInt(prompt("Enter the amount of characters you would like in your password: must be at least 8 and no more than 128."));
+
+  if (Number.isNaN(length)) {
+    alert("Length must be entered as a number.");
+    return null;
+  }
 
   // If user pressed Cancel, immediately end function
   if (!length) {
     window.alert("Your password must be between 8-128 characters!");
     return null;
   }
-  
+
   // check conditions for acceptable length
   if (length < 8 || length > 128) {
     window.alert("Your password must be between 8-128 characters!");
     return null;
-  } else if (length >= 8 || length <= 128) {
-    window.alert("Great! Let's move on.");
-  };
+  } 
 
   let lowercase = window.confirm("Do you want to include lowercase letters?");
     if (lowercase) {
@@ -44,8 +49,20 @@ function generatePassword() {
     if (special) {
       characterOptions = characterOptions.concat(specialCharacter); 
     }
-}
 
+    // if user does not say yes to any character type
+    if (!lowercase && !uppercase && !number && !special) {
+      alert("You must choose at least one character type.");
+      return null;
+    }
+  
+    //randomly pull from array based on the length chosen
+    for (let i = 0; i < length; i++) {
+      let index = Math.floor(Math.random() * characterOptions.length);
+      result += characterOptions[index];
+    }
+    return result;
+}
 
 // Get references to the #generate element
 let generateBtn = document.querySelector("#generate");
