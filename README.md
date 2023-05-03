@@ -16,7 +16,7 @@ Screenshot of deployed application:
 
 ## Credits
 
-While I wrote the code for this application, I received support from a tutor to check my function and to debug my for loop.  
+I received starter code for this application from this [GitHub repository](https://github.com/coding-boot-camp/friendly-parakeet.git). I received support from a tutor to check my function and to debug my for loop.  
 
 ## License
 
