@@ -9,10 +9,10 @@ Web application users can use to generate a random password.
 
 To use this project, you can review the html, css, and JavaScript files. To test your own suggestions on what to adjust, open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows). Try any changes in the console panel and see then update in real time. 
 
-Link to the [deployed application](). 
+Link to the [deployed application](https://amandajduva.github.io/generate-password/). 
 
 Screenshot of deployed application:
-![deployed application]()
+![deployed application](./password-generator-screenshot.png)
 
 ## Credits
 
